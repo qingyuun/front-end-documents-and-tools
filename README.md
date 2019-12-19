@@ -69,6 +69,6 @@
 
 ## 编辑器代码格式化 搭配扩展
 
-![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/formatEX.jpg)
+![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/formatEX.jpg)
 
 ##
