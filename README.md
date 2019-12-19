@@ -65,6 +65,13 @@
         "source.fixAll.eslint": true
       }
     }
+    
+    
+    
+    ```
+    代码格式化配置参考文档
+    https://juejin.im/post/5cc58039f265da03775c5a6f
+    ```
 ```
 
 ## 编辑器代码格式化 搭配扩展
