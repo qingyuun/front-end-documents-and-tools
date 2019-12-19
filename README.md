@@ -59,7 +59,6 @@
         }
       },
     
-      /* ESLint */
       "editor.tabSize": 2,
       "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
       "editor.codeActionsOnSave": {
@@ -67,3 +66,9 @@
       }
     }
 ```
+
+## 编辑器代码格式化 搭配扩展
+
+![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/formatEX.jpg)
+
+##
