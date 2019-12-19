@@ -76,6 +76,6 @@
 
 ## 编辑器代码格式化 搭配扩展
 
-![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/formatEX.jpg)
+![image](https://raw.githubusercontent.com/qingyuun/front-end-documents-and-tools/master/formatEX.jpg?token=AEZMGN7EJMVDCPU7W434WMK57LT62)
 
 ##
