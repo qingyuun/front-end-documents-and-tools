@@ -63,7 +63,9 @@
       "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
-      }
+      },
+      "javascript.updateImportsOnFileMove.enabled": "always",
+      "workbench.editor.enablePreview": false, // 打开文件时在新标签打开
     }
     
     
