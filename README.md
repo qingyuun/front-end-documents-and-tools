@@ -59,13 +59,17 @@
         }
       },
     
-      "editor.tabSize": 2,
+      /* 编辑器配置 */
+      "editor.tabSize": 2, // tab缩进空格数
       "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
       },
       "javascript.updateImportsOnFileMove.enabled": "always",
-      "workbench.editor.enablePreview": false, // 打开文件时在新标签打开
+      "workbench.editor.enablePreview": false,
+      "diffEditor.ignoreTrimWhitespace": false, // 打开文件时在新标签打开
+      "explorer.compactFolders": false, // 空文件夹自动折叠
+      "problems.showCurrentInStatus": true, // 在状态栏显示错误信息
     }
     
     
