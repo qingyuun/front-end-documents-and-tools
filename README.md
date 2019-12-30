@@ -86,7 +86,6 @@
 
 ## Vue 相关文档
 
-
 [Vue 官方文档：https://vuejs.org/index.html](https://vuejs.org/index.html)
         
 [Vue-cli 文档：https://cli.vuejs.org/](https://cli.vuejs.org/)
@@ -95,3 +94,10 @@
         
 [VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
     
+## Node 相关文档
+
+[Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
+
+[Npm 官方文档:https://www.npmjs.com/](https://www.npmjs.com/)
+
+[Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
