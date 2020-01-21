@@ -141,3 +141,7 @@
 [UNI-APP 官方文档:https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 
 ##
+
+# GIT 操作
+
+刷新远程分支  git remote update origin --prune
