@@ -145,3 +145,34 @@
 # GIT 操作
 
 刷新远程分支  git remote update origin --prune
+
+# 代码片段
+
+## vscode 代码快捷生成 代码片段
+
+## NUXT VUEX
+
+```
+"print to console":{
+	"prefix": "Nuxt Vuex",
+	"body": [
+		"import * as '' from ''",
+		"export const state = () => ({",
+		"  courtLevel: [",
+				
+		"  ]",
+		"})",
+		"export const mutations = {",
+		"  SET_COURT_LEVEL: (state, data) => {",
+		"    state.courtLevel = data",
+		"  }",
+		"}",
+		"export const actions = {",
+		"  getCourt({ commit }, data) {",
+		"",
+		"  }",
+		"}"
+	],
+	"description": "nuxt vuex store"
+}
+```
