@@ -176,3 +176,50 @@
 	"description": "nuxt vuex store"
 }
 ```
+
+## VUE
+```
+"Print to console": {
+    "prefix": "vue",
+    "body": [
+        "<template>",
+        "  <div>",
+        "",
+        "  </div>",
+        "</template>",
+        "",
+        "<script>",
+        "import a from ''",
+        "export default {",
+        "  name: '',",
+        "",
+        "  components: {",
+        "    a",
+        "  },",
+        "",
+        "  data () {",
+        "    return {",
+        "",
+        "    }",
+        "  },",
+        "",
+        "  watch: {",
+        "  },",
+        "",
+        "  mounted () {",
+        "  },",
+        "",
+        "  methods: {",
+        "",
+        "  }",
+        "}",
+        "</script>",
+        "",
+        "<style lang='scss' scoped>",
+        "",
+        "</style>",
+        ""
+    ],
+    "description": "Log output to console"
+}
+```
