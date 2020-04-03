@@ -142,7 +142,7 @@
 
 ## 时间日期格式化
 
-[MomentJs 官方文档:https://momentjs.com/](https://momentjs.com/)
+[Moment.js 官方文档:https://momentjs.com/](https://momentjs.com/)
 
 # GIT 操作
 
