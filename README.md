@@ -149,7 +149,7 @@
 ``` bash
 
 # 刷新远程分支
-$ ngit remote update origin --prune
+$ git remote update origin --prune
 
 # 创建分支
 $ git branch <branch-name>
