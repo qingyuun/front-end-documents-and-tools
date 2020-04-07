@@ -146,7 +146,44 @@
 
 # GIT 操作
 
-刷新远程分支  git remote update origin --prune
+``` bash
+
+# 刷新远程分支
+$ ngit remote update origin --prune
+
+# 创建分支
+$ git branch <branch-name>
+
+# 切换分支
+$ git checkout <branch-name>
+
+# 新建并切换分支
+$ git checkout -b <branch-name>
+
+# 删除分支
+$ git branch -d <branch-name>
+
+# 删除远程分支
+$ git branch -r -d origin/branch-name
+
+# 查看分支
+$ git branch
+
+# 查看远程分支
+$  git branch -a
+
+# 获取远程更新代码
+$ git fetch
+
+# 合并远程代码至本地分支
+$ git merge
+
+# 推送至远程分支
+$ git push origin <branch-name>
+
+```
+
+
 
 # 代码片段
 
