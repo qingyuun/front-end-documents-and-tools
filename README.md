@@ -59,11 +59,17 @@
         }
       },
     
-      "editor.tabSize": 2,
+      /* 编辑器配置 */
+      "editor.tabSize": 2, // tab缩进空格数
       "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
-      }
+      },
+      "javascript.updateImportsOnFileMove.enabled": "always",
+      "workbench.editor.enablePreview": false,
+      "diffEditor.ignoreTrimWhitespace": false, // 打开文件时在新标签打开
+      "explorer.compactFolders": false, // 空文件夹自动折叠
+      "problems.showCurrentInStatus": true, // 在状态栏显示错误信息
     }
     
     
@@ -78,4 +84,181 @@
 
 ![image](https://raw.githubusercontent.com/qingyuun/front-end-documents-and-tools/master/formatEX.jpg?token=AEZMGN7EJMVDCPU7W434WMK57LT62)
 
-##
+## Vue 相关文档
+
+[Vue 官方文档：https://vuejs.org/index.html](https://vuejs.org/index.html)
+        
+[Vue-cli 文档：https://cli.vuejs.org/](https://cli.vuejs.org/)
+        
+[NUXT官方文档：https://nuxtjs.org/](https://nuxtjs.org/)
+        
+[VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
+    
+## Node 相关文档
+
+[Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
+
+[Npm 官方文档:https://www.npmjs.com/](https://www.npmjs.com/)
+
+[Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
+
+## UI框架
+
+[Element-UI 官方文档:https://element.eleme.cn/](https://element.eleme.cn/)
+
+[iView 官方文档:https://www.iviewui.com/](https://www.iviewui.com/)
+
+[Ant 官方文档:https://ant.design/index-cn](https://ant.design/index-cn)
+
+[D2 Admin 官方文档:https://fairyever.com/d2-admin/doc/](https://fairyever.com/d2-admin/doc/)
+
+## 小程序
+
+[腾讯开发文档:https://open.tencent.com/](https://open.tencent.com/)
+
+[微信平台文档:https://developers.weixin.qq.com/doc/](https://developers.weixin.qq.com/doc/)
+
+[微信小程序官方文档:https://developers.weixin.qq.com/miniprogram/dev/api/](https://developers.weixin.qq.com/miniprogram/dev/api/)
+
+[QQ小程序官方文档:https://q.qq.com/wiki/develop/miniprogram/frame/](https://q.qq.com/wiki/develop/miniprogram/frame/)
+
+[mpvue 官方文档:http://mpvue.com/](http://mpvue.com/)
+
+[支付宝平台文档:https://docs.open.alipay.com/catalog](https://docs.open.alipay.com/catalog)
+
+[支付宝小程序官方文档:https://docs.alipay.com/mini/developer/](https://docs.alipay.com/mini/developer/)
+
+[百度开发者中心:https://developer.baidu.com/](https://developer.baidu.com/)
+
+[百度小程序官方文档:https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/)
+
+[字节跳动开发平台:https://developer.toutiao.com/](https://developer.toutiao.com/)
+
+[字节跳动小程序文档:https://developer.toutiao.com/docs/api/](https://developer.toutiao.com/docs/api/)
+
+## 跨平台开发
+
+[UNI-APP 官方文档:https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
+
+## 时间日期格式化
+
+[Moment.js 官方文档:https://momentjs.com/](https://momentjs.com/)
+
+# GIT 操作
+
+``` bash
+
+# 刷新远程分支
+$ git remote update origin --prune
+
+# 创建分支
+$ git branch <branch-name>
+
+# 切换分支
+$ git checkout <branch-name>
+
+# 新建并切换分支
+$ git checkout -b <branch-name>
+
+# 删除分支
+$ git branch -d <branch-name>
+
+# 删除远程分支
+$ git branch -r -d origin/branch-name
+
+# 查看分支
+$ git branch
+
+# 查看远程分支
+$  git branch -a
+
+# 获取远程更新代码
+$ git fetch
+
+# 合并远程代码至本地分支
+$ git merge
+
+# 推送至远程分支
+$ git push origin <branch-name>
+
+```
+
+
+
+# 代码片段
+
+## vscode 代码快捷生成 代码片段
+
+## NUXT VUEX
+
+```
+"print to console":{
+	"prefix": "Nuxt Vuex",
+	"body": [
+		"import * as '' from ''",
+		"export const state = () => ({",
+		"  courtLevel: [",
+				
+		"  ]",
+		"})",
+		"export const mutations = {",
+		"  SET_COURT_LEVEL: (state, data) => {",
+		"    state.courtLevel = data",
+		"  }",
+		"}",
+		"export const actions = {",
+		"  getCourt({ commit }, data) {",
+		"",
+		"  }",
+		"}"
+	],
+	"description": "nuxt vuex store"
+}
+```
+
+## VUE
+```
+"Print to console": {
+    "prefix": "vue",
+    "body": [
+        "<template>",
+        "  <div>",
+        "",
+        "  </div>",
+        "</template>",
+        "",
+        "<script>",
+        "import a from ''",
+        "export default {",
+        "  name: '',",
+        "",
+        "  components: {",
+        "    a",
+        "  },",
+        "",
+        "  data () {",
+        "    return {",
+        "",
+        "    }",
+        "  },",
+        "",
+        "  watch: {",
+        "  },",
+        "",
+        "  mounted () {",
+        "  },",
+        "",
+        "  methods: {",
+        "",
+        "  }",
+        "}",
+        "</script>",
+        "",
+        "<style lang='scss' scoped>",
+        "",
+        "</style>",
+        ""
+    ],
+    "description": "Log output to console"
+}
+```
