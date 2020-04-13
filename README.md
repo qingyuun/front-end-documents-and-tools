@@ -181,6 +181,53 @@ $ git merge
 # 推送至远程分支
 $ git push origin <branch-name>
 
+# 查看本次的修改、新建、删除等信息(new file:新建文件，modified:修改文件，deleted: 删除的文件)
+$ git status 
+
+# 拉取代码
+$ git pull
+
+# 添加所有即将提交的文件
+$ git add . 
+
+# 添加某个文件
+$ git add fileNamePath
+
+#  提交到本地
+$ git commit -'提交的日志'
+
+# 提交到git服务器
+$ git push
+
+# 添加所有即将提交的文件并提交到本地 
+$ git commit -a -m '提交的日志' 
+
+# 相当于git add . 和 git commi -' '命令的集合，当你使用git commit -a -m ' '命令时，就会执行上述两个操作
+$ git commit -a -m 
+
+# 暂存（存储在本地，并将项目本次操作还原）
+$ git stash
+
+# 使用上一次暂存，并将这个暂存删除，使用该命令后，如果有冲突，终端会显示，如果有冲突需要先解决冲突（这就避免了冲突提交服务器，将冲突留在本地，然后解决）
+$ git stash pop 
+
+# 查看所有的暂存
+$ git stash list 
+
+# 清空所有的暂存
+$ git stash clear
+
+#  删除某一个暂存，在中括号里面放置需要删除的暂存ID
+$ git stash drop [-q|--quiet] [<stash>]
+
+# 使用某个暂存，但是不会删除这个暂存
+$ git stash apply 
+
+# 找回清空代码
+$ git fsck --lost-found 命令找出刚才删除的分支里面的提交对象。
+$ git show 命令查看是否正确，如果正确使用
+$ git merge 命令找回
+
 ```
 
 
