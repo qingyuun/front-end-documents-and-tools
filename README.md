@@ -309,3 +309,30 @@ $ git merge 命令找回
     "description": "Log output to console"
 }
 ```
+
+## VUE Nuxt
+```
+"print to console":{
+	"prefix": "Nuxt Vuex",
+	"body": [
+		"import * as '' from ''",
+		"export const state = () => ({",
+		"  courtLevel: [",
+				
+		"  ]",
+		"})",
+		"export const mutations = {",
+		"  SET_COURT_LEVEL: (state, data) => {",
+		"    state.courtLevel = data",
+		"  }",
+		"}",
+		"export const actions = {",
+		"  getCourt({ commit }, data) {",
+		"",
+		"  }",
+		"}",
+		""
+	],
+	"description": "nuxt vuex store"
+}
+```
