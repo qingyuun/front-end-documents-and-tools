@@ -93,6 +93,8 @@
 [NUXT官方文档：https://nuxtjs.org/](https://nuxtjs.org/)
         
 [VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
+
+[Vue 相关视频: 百度网盘 提取码：mlw7](https://pan.baidu.com/s/1oUgoWKO_H-i6qd0moxMfvQ)
     
 ## Node 相关文档
 
