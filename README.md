@@ -5,7 +5,9 @@
     
 # VSCode 
 
-## 编辑器代码格式化
+
+### 编辑器代码格式化
+
 
 ```
     {
@@ -85,7 +87,7 @@
     ```
 ```
 
-## 编辑器代码格式化 搭配扩展
+### 编辑器代码格式化 搭配扩展
 
 ![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/formatEX.jpg)
 
@@ -249,7 +251,7 @@ $ git merge 命令找回
 
 ## vscode 代码快捷生成 代码片段
 
-## NUXT VUEX
+#### NUXT VUEX
 
 ```
 "print to console":{
@@ -276,7 +278,7 @@ $ git merge 命令找回
 }
 ```
 
-## VUE
+#### VUE
 ```
 "Print to console": {
     "prefix": "vue",
@@ -323,7 +325,7 @@ $ git merge 命令找回
 }
 ```
 
-## VUE Nuxt
+#### VUE Nuxt
 ```
 "Print to console": {
 	"prefix": "vue nuxt",
