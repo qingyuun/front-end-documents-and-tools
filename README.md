@@ -100,6 +100,12 @@
 [VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
 
 [Vue 相关视频: 百度网盘 提取码：mlw7](https://pan.baidu.com/s/1oUgoWKO_H-i6qd0moxMfvQ)
+
+## PDF 在线预览
+
+[vue-pdf github 仓库地址](https://github.com/FranckFreiburger/vue-pdf)
+
+[vue 使用 vue-pdf 实现在线预览](https://mp.weixin.qq.com/s?__biz=MzI4OTY2MzE0OA==&mid=2247484919&idx=1&sn=e1146d5922ff35b156ee142bbd92b776&chksm=ec2af434db5d7d22ea00fe50d95180a5b7304dcaa37df88fcc9d57c312d274048558631c9770&scene=126&sessionid=1587947445&key=40ff362e82ee7cc571cb3b08a7fcce11b431ee57966ecf8cdf641509605449613fb55aa137816e13746ddb1e56e7592f1622b46bd2a5208f4fe9b7a02b27e13876a886b18e574a22ca0a21fa525d8990&ascene=1&uin=NzE5NzUwMTYz&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=Ab1znlZXmkvw63i4Los%2BjTQ%3D&pass_ticket=j3J35pQXyD5DqiTefP3Ly1LgmT99qV%2Bp4RJp6hSqmcZ6Pe%2FtltCmLd9hhY3XweJ9)
     
 ## Node 相关文档
 
