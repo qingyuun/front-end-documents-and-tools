@@ -1,7 +1,9 @@
-
 # VUE-PDF 在线预览使用说明
 
-![images](url:)
+>  原文连接 [微信公众号：Vue 社区 ： vue 使用 vue-pdf 实现pdf在线预览](https://mp.weixin.qq.com/s?__biz=MzI4OTY2MzE0OA==&mid=2247484919&idx=1&sn=e1146d5922ff35b156ee142bbd92b776&chksm=ec2af434db5d7d22ea00fe50d95180a5b7304dcaa37df88fcc9d57c312d274048558631c9770&scene=126&sessionid=1587947445&key=1ff99ff738faa8e76e94671b78de77b5e51e58268dd7a6dc0d25185ebc9d87642ae3b63add67a92dc2dc4f053bc32f1f5961d00a7109dcec662a96154cbe15730dfaebfb8ef613c2c92cdf773222c0b7&ascene=1&uin=NzE5NzUwMTYz&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=ATBqYeaacn%2FQR7VrXM%2BaPSg%3D&pass_ticket=j3J35pQXyD5DqiTefP3Ly1LgmT99qV%2Bp4RJp6hSqmcZ6Pe%2FtltCmLd9hhY3XweJ9)
+
+![images](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/vuepdf/vue-pdf-bg.jpg)
+
 
 ## 背景
 
@@ -247,7 +249,7 @@ pdfPrint() {
 
 成品展示：
 
-![images](url:)
+![images](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/vuepdf/pdf-print.jpg)
 
 
 ## 其他问题以及解决方案：
