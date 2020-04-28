@@ -212,7 +212,7 @@ li[data-type="single"] {
 
 ```
 
-## JavaScript 规范
+# JavaScript 规范
 
 ### 缩进
 
@@ -567,7 +567,7 @@ x = x || y || 1;
 
 ```
 
-## Vue规范
+# Vue规范
 
 ### 目录、文件、组件命名规范
 
