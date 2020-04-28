@@ -1,8 +1,84 @@
 # 常用软件
 
 [Adobe 2020 全家桶： 可修改安装位置、安装后登录账号即可使用 地址：百度网盘  提取码：8php](https://pan.baidu.com/s/17BDZnKYxG_NKsnyneSs1lg)
+  
     
+# 代码规范
+
+[前端开发代码规范](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/CodeFormatting.md)
+
+## Vue 相关文档
+
+[Vue 官方文档：https://vuejs.org/index.html](https://vuejs.org/index.html)
+        
+[Vue-cli 文档：https://cli.vuejs.org/](https://cli.vuejs.org/)
+        
+[NUXT官方文档：https://nuxtjs.org/](https://nuxtjs.org/)
+        
+[VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
+
+[Vue 相关视频: 百度网盘 提取码：mlw7](https://pan.baidu.com/s/1oUgoWKO_H-i6qd0moxMfvQ)
+
+## PDF 在线预览
+
+[vue-pdf github 仓库地址](https://github.com/FranckFreiburger/vue-pdf)
+
+[vue 使用 vue-pdf 实现在线预览](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/vue-pdf.md)
     
+## Node 相关文档
+
+[Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
+
+[Npm 官方文档:https://www.npmjs.com/](https://www.npmjs.com/)
+
+[Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
+
+## UI框架
+
+[Element-UI 官方文档:https://element.eleme.cn/](https://element.eleme.cn/)
+
+[iView 官方文档:https://www.iviewui.com/](https://www.iviewui.com/)
+
+[Ant 官方文档:https://ant.design/index-cn](https://ant.design/index-cn)
+
+[D2 Admin 官方文档:https://fairyever.com/d2-admin/doc/](https://fairyever.com/d2-admin/doc/)
+
+## 小程序
+
+[腾讯开发文档:https://open.tencent.com/](https://open.tencent.com/)
+
+[微信平台文档:https://developers.weixin.qq.com/doc/](https://developers.weixin.qq.com/doc/)
+
+[微信小程序官方文档:https://developers.weixin.qq.com/miniprogram/dev/api/](https://developers.weixin.qq.com/miniprogram/dev/api/)
+
+[QQ小程序官方文档:https://q.qq.com/wiki/develop/miniprogram/frame/](https://q.qq.com/wiki/develop/miniprogram/frame/)
+
+[mpvue 官方文档:http://mpvue.com/](http://mpvue.com/)
+
+[支付宝平台文档:https://docs.open.alipay.com/catalog](https://docs.open.alipay.com/catalog)
+
+[支付宝小程序官方文档:https://docs.alipay.com/mini/developer/](https://docs.alipay.com/mini/developer/)
+
+[百度开发者中心:https://developer.baidu.com/](https://developer.baidu.com/)
+
+[百度小程序官方文档:https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/)
+
+[字节跳动开发平台:https://developer.toutiao.com/](https://developer.toutiao.com/)
+
+[字节跳动小程序文档:https://developer.toutiao.com/docs/api/](https://developer.toutiao.com/docs/api/)
+
+## 跨平台开发
+
+[UNI-APP 官方文档:https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
+
+## 时间日期格式化
+
+[Moment.js 官方文档:https://momentjs.com/](https://momentjs.com/)
+
+## JS 相关文档
+
+[JS 总结](https://juejin.im/post/5e9f0bdce51d4546f5791989)
+
 # VSCode 
 
 
@@ -90,74 +166,6 @@
 ### 编辑器代码格式化 搭配扩展
 
 ![image](https://raw.githubusercontent.com/qingyuun/front-end-documents-and-tools/master/formatEX.jpg?token=AEZMGN7EJMVDCPU7W434WMK57LT62)
-
-## Vue 相关文档
-
-[Vue 官方文档：https://vuejs.org/index.html](https://vuejs.org/index.html)
-        
-[Vue-cli 文档：https://cli.vuejs.org/](https://cli.vuejs.org/)
-        
-[NUXT官方文档：https://nuxtjs.org/](https://nuxtjs.org/)
-        
-[VueX官方文档：https://vuex.vuejs.org/](https://vuex.vuejs.org/)
-
-[Vue 相关视频: 百度网盘 提取码：mlw7](https://pan.baidu.com/s/1oUgoWKO_H-i6qd0moxMfvQ)
-
-## PDF 在线预览
-
-[vue-pdf github 仓库地址](https://github.com/FranckFreiburger/vue-pdf)
-
-[vue 使用 vue-pdf 实现在线预览](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/vue-pdf.md)
-    
-## Node 相关文档
-
-[Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
-
-[Npm 官方文档:https://www.npmjs.com/](https://www.npmjs.com/)
-
-[Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
-
-## UI框架
-
-[Element-UI 官方文档:https://element.eleme.cn/](https://element.eleme.cn/)
-
-[iView 官方文档:https://www.iviewui.com/](https://www.iviewui.com/)
-
-[Ant 官方文档:https://ant.design/index-cn](https://ant.design/index-cn)
-
-[D2 Admin 官方文档:https://fairyever.com/d2-admin/doc/](https://fairyever.com/d2-admin/doc/)
-
-## 小程序
-
-[腾讯开发文档:https://open.tencent.com/](https://open.tencent.com/)
-
-[微信平台文档:https://developers.weixin.qq.com/doc/](https://developers.weixin.qq.com/doc/)
-
-[微信小程序官方文档:https://developers.weixin.qq.com/miniprogram/dev/api/](https://developers.weixin.qq.com/miniprogram/dev/api/)
-
-[QQ小程序官方文档:https://q.qq.com/wiki/develop/miniprogram/frame/](https://q.qq.com/wiki/develop/miniprogram/frame/)
-
-[mpvue 官方文档:http://mpvue.com/](http://mpvue.com/)
-
-[支付宝平台文档:https://docs.open.alipay.com/catalog](https://docs.open.alipay.com/catalog)
-
-[支付宝小程序官方文档:https://docs.alipay.com/mini/developer/](https://docs.alipay.com/mini/developer/)
-
-[百度开发者中心:https://developer.baidu.com/](https://developer.baidu.com/)
-
-[百度小程序官方文档:https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/)
-
-[字节跳动开发平台:https://developer.toutiao.com/](https://developer.toutiao.com/)
-
-[字节跳动小程序文档:https://developer.toutiao.com/docs/api/](https://developer.toutiao.com/docs/api/)
-
-## 跨平台开发
-
-[UNI-APP 官方文档:https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
-
-## 时间日期格式化
-
-[Moment.js 官方文档:https://momentjs.com/](https://momentjs.com/)
 
 # GIT 操作
 
