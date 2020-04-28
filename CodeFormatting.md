@@ -69,6 +69,19 @@
      * 1.6.11 [function 函数](#function-函数)
      * 1.6.12 [运算规范](#运算规范)
   *  1.7 [小程序规范](#小程序规范)
+     * 1.7.1 [目录、文件、组件命名规范](#目录文件组件命名规范-1)
+       * 1.7.1.1 [目录](#1-目录-1)
+       * 1.7.1.2 [page下的文件](#2-page下的文件)
+       * 1.7.1.3 [组件文件](#3-组件文件-1)
+     * 1.7.2 [组件的选项顺序](#组件的选项顺序)
+       * 1.7.2.1 [页面组件](#页面组件)
+       * 1.7.2.2 [自定义组件](#自定义组件)
+     * 1.7.3 [组件开发规范](#组件开发规范-1)
+       * 1.7.3.1 [注册组件](#1-注册组件-1)
+       * 1.7.3.2 [properties 命名规范](#2-properties-命名规范)
+     * 1.7.4 [methods 命名规范](#methods-命名规范-1)
+     * 1.7.5 [多个属性的标签元素规范](#多个属性的标签元素规范-1)
+     * 1.7.6 [元素属性的顺序](#元素属性的顺序-1)
 
 
 
@@ -1458,7 +1471,7 @@ js类文件使用&nbsp;&nbsp;{-&nbsp;&nbsp;PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;�
 
 ##### 1. 注册组件
 
-注册组件的时候，全部使用 PascalCase 格式。
+注册组件的时候，全部使用&nbsp;&nbsp;{-&nbsp;&nbsp; PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp; 格式。
 
 ```
 
@@ -1470,7 +1483,7 @@ js类文件使用&nbsp;&nbsp;{-&nbsp;&nbsp;PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;�
   
 ##### 2. properties 命名规范
 
-* 在声明properties的时候，其命名应该始终使用camelCase，而在模板中应该始终使用kebab-case
+* 在声明&nbsp;&nbsp;{-&nbsp;&nbsp;properties&nbsp;&nbsp;-}&nbsp;&nbsp;的时候，其命名应该始终使用&nbsp;&nbsp;{-&nbsp;&nbsp;camelCase&nbsp;&nbsp;-}&nbsp;&nbsp;，而在模板中应该始终使用&nbsp;&nbsp;{-&nbsp;&nbsp;kebab-case&nbsp;&nbsp;-}&nbsp;&nbsp;
 
 ```
 <!--wxml-->
@@ -1500,7 +1513,7 @@ properties: {
 
 ### methods 命名规范
 
-* **驼峰式命名camelCase，操作性函数统一使用动词或者动词+名词形式**
+* **驼峰式命名 &nbsp;&nbsp;{-&nbsp;&nbsp;camelCase&nbsp;&nbsp;-}&nbsp;&nbsp;，操作性函数统一使用动词或者动词+名词形式**
 
 ```
 
