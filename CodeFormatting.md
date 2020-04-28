@@ -1053,17 +1053,18 @@ SASS支持 CSS 标准的多行注释 /* */，同时也支持单行注释 //。
 * 注释内容可以加入 SASS 变量
 
 
-**团队约定**
+##### 团队约定
 
 
-全部遵循 CSS 注释规范
+* 全部遵循 CSS 注释规范
 
 
-不使用 /*! */ 注释方式
+* 不使用 /*! */ 注释方式
 
 
-注释内不放 SASS 变量
+* 注释内不放 SASS 变量
 
+```
 
 @charset "UTF-8";
 
@@ -1093,9 +1094,15 @@ SASS支持 CSS 标准的多行注释 /* */，同时也支持单行注释 //。
 
 /* module B nav */
 .mod_b_nav {}
+
+```
+
 ### 嵌套规范
 
-#### 选择器嵌套
+##### 选择器嵌套
+
+```
+
 /* CSS */
 .jdc {}
 body .jdc {}
@@ -1104,7 +1111,14 @@ body .jdc {}
 .jdc {
     body & {}
 }
-#### 属性嵌套
+
+```
+
+
+##### 属性嵌套
+
+```
+
 /* CSS */
 .jdc {
     background-color: red;
@@ -1122,8 +1136,15 @@ body .jdc {}
         position: 0 0;
     }
 }
+
+```
+
 ### 变量
+
 可复用属性尽量抽离为页面变量，易于统一维护
+
+```
+
 // CSS
 .jdc {
     color: red;
@@ -1136,8 +1157,15 @@ $color: red;
     color: $color;
     border-color: $color;
 }
+
+```
+
 ### 混合(mixin)
-根据功能定义模块，然后在需要使用的地方通过 @include 调用，避免编码时重复输入代码段
+
+根据功能定义模块，然后在需要使用的地方通过 &nbsp;&nbsp;{-&nbsp;&nbsp; @include &nbsp;&nbsp;-}&nbsp;&nbsp; 调用，避免编码时重复输入代码段
+
+```
+
 // CSS
 .jdc_1 {
     -webkit-border-radius: 5px;
@@ -1180,8 +1208,15 @@ $color: red;
 .jdc_2 {
     @include icon(-20px, 0);
 }
+
+```
+
 ### 占位选择器 %
+
 如果不调用则不会有任何多余的 css 文件，占位选择器以 % 标识定义，通过 @extend 调用
+
+```
+
 //scss
 %borderbox {
     -webkit-box-sizing: border-box;
@@ -1190,8 +1225,15 @@ $color: red;
 .jdc {
     @extend %borderbox;
 }
+
+```
+
 ### extend 继承
+
 可以继承复用公共的属性
+
+```
+
 // CSS
 .jdc_1 {
     font-size: 12px;
@@ -1225,7 +1267,13 @@ $color: red;
     @extend %font_red;
     font-weight: bold;
 }
+
+```
+
 ### for 循环
+
+```
+
 // CSS
 .jdc_1 {background-position: 0 -20px;}
 .jdc_2 {background-position: 0 -40px;}
@@ -1237,9 +1285,17 @@ $color: red;
         background-position: 0 (-20px) * $i;
     }
 }
+
+```
+
 注意： #{} 是连接符，变量连接使用时需要依赖
 
+
+
 ### each 循环
+
+```
+
 // CSS
 .jdc_list {
     background-image: url(/img/jdc_list.png);
@@ -1273,7 +1329,12 @@ $color: red;
         background-color: $color;
     }
 }
+
+```
+
 ### function 函数
+
+```
 
 @function pxToRem($px) {
     @return $px / 10px * 1rem;
@@ -1281,14 +1342,26 @@ $color: red;
 .jdc {
     font-size: pxToRem(12px);
 }
+
+```
+
 ### 运算规范
 
 运算符之间空出一个空格
+
+```
+
 .jdc {
     width: 100px - 50px;
     height: 30px / 5;
 }
-复制代码注意: 运算单位，单位同时参与运算，所以 10px 不等于 10，乘除运算时需要特别注意
+
+```
+
+**注意**: 运算单位，单位同时参与运算，所以 10px 不等于 10，乘除运算时需要特别注意
+
+```
+
 // 正确的运算格式
 .jdc {
     width: 100px - 50px;
@@ -1296,3 +1369,5 @@ $color: red;
     width: 100px * 2;
     width: 100px / 2;
 }
+
+```
