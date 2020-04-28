@@ -1,7 +1,11 @@
 # 常用软件
 
 [Adobe 2020 全家桶： 可修改安装位置、安装后登录账号即可使用 地址：百度网盘  提取码：8php](https://pan.baidu.com/s/17BDZnKYxG_NKsnyneSs1lg)
+  
     
+# 代码规范
+
+[前端开发代码规范](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/CodeFormatting.md)
     
 # VSCode 
 
