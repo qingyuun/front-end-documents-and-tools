@@ -1371,3 +1371,243 @@ $color: red;
 }
 
 ```
+
+
+# 小程序规范
+
+### 目录、文件、组件命名规范
+
+##### 1. 目录
+
+目录统一使用&nbsp;&nbsp;{-&nbsp;&nbsp; kebab-case &nbsp;&nbsp;-}&nbsp;&nbsp;风格
+
+##### 2. page下的文件
+
+
+js类文件使用&nbsp;&nbsp;{-&nbsp;&nbsp;PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;，如&nbsp;&nbsp;{-&nbsp;&nbsp;UserInfo.js&nbsp;&nbsp;-}&nbsp;&nbsp;
+
+
+其他资源文件统一使用&nbsp;&nbsp;{-&nbsp;&nbsp;kebab-case&nbsp;&nbsp;-}&nbsp;&nbsp;风格，如&nbsp;&nbsp;{-&nbsp;&nbsp;user-detail.js&nbsp;&nbsp;-}&nbsp;&nbsp;, &nbsp;&nbsp;{-&nbsp;&nbsp;user-detail.css&nbsp;&nbsp;-}&nbsp;&nbsp;, &nbsp;&nbsp;{-&nbsp;&nbsp;user-avatar.png&nbsp;&nbsp;-}&nbsp;&nbsp;
+
+
+##### 3. 组件文件
+
+* 命名遵循&nbsp;&nbsp;{-&nbsp;&nbsp;PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;约定。组件文件名除&nbsp;&nbsp;{-&nbsp;&nbsp;index.vue&nbsp;&nbsp;-}&nbsp;&nbsp;之外，一律采&nbsp;&nbsp;{-&nbsp;&nbsp;用PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;(大驼峰)写法。原因是引入组件时，组件的变量通常&nbsp;&nbsp;{-&nbsp;&nbsp;用PascalCase&nbsp;&nbsp;-}&nbsp;&nbsp;格式，以区别于一般变量。组件文件名与变量名一致，方便对应。
+
+```
+
+"usingComponents": {
+  "select-store-dialog": "../login/components/SelectStoreDialog/index"
+}
+
+```
+
+* 组件名应该始终是多个单词的,组件由多个单词组成，如&nbsp;&nbsp;{-&nbsp;&nbsp;BookItem&nbsp;&nbsp;-}&nbsp;&nbsp;，单独的&nbsp;&nbsp;{-&nbsp;&nbsp;Book&nbsp;&nbsp;-}&nbsp;&nbsp;不推荐。
+
+* 组件使用遵循&nbsp;&nbsp;{-&nbsp;&nbsp;kebab-case&nbsp;&nbsp;-}&nbsp;&nbsp; 约定在页面中使用组件需要前后闭合，并以短线分隔，如：
+
+```
+
+<user-book></user-book>
+
+<user-book />
+
+```
+
+### 组件的选项顺序
+
+##### 页面组件
+
+```
+
+- data    (数据)
+- 生命周期函数 （onLoad等）  
+- 各类方法  （methods）  
+
+```
+##### 自定义组件
+
+```
+
+- properties    (需要传得数据)
+- data    (数据)
+- 组件钩子函数 （attached等）  
+- 页面钩子函数 （show等）  
+- 各类方法  （methods） 
+
+```
+
+### 组件开发规范
+
+##### 1. 注册组件
+
+注册组件的时候，全部使用 PascalCase 格式。
+
+```
+
+"usingComponents": {
+    "select-store-dialog": "../login/components/SelectStoreDialog/index"
+  }
+  
+```
+  
+##### 2. properties 命名规范
+
+* 在声明properties的时候，其命名应该始终使用camelCase，而在模板中应该始终使用kebab-case
+
+```
+<!--wxml-->
+<welcome-message greeting-text="hi"></welcome-message>
+
+```
+
+* **properties定义应该尽量详细**
+
+    **1.申明类型type（必填）**
+
+    **2.提供默认值（必填)**
+
+```
+
+/**
+* 组件的属性列表
+*/
+properties: {
+  content:{
+    type: Object,
+    value: {}
+  }
+}
+
+```
+
+### methods 命名规范
+
+* **驼峰式命名camelCase，操作性函数统一使用动词或者动词+名词形式**
+
+```
+
+jumpPage() {
+
+}
+
+openCarInfoDialog () {
+    
+}
+
+```
+
+* **请求数据方法，以 data 结尾**
+
+```
+
+getListData () {
+ 
+}
+
+postFormData () {
+    
+}
+
+```
+
+
+* **注**: 尽量使用常用单词开头（set、get、go、can、has、is）
+
+**附**： 函数方法常用的动词:
+
+
+```
+get 获取/set 设置,
+add 增加/remove 删除
+create 创建/destory 移除
+start 启动/stop 停止
+open 打开/close 关闭,
+read 读取/write 写入
+load 载入/save 保存,
+create 创建/destroy 销毁
+begin 开始/end 结束,
+backup 备份/restore 恢复
+import 导入/export 导出,
+split 分割/merge 合并
+inject 注入/extract 提取,
+attach 附着/detach 脱离
+bind 绑定/separate 分离,
+view 查看/browse 浏览
+edit 编辑/modify 修改,
+select 选取/mark 标记
+copy 复制/paste 粘贴,
+undo 撤销/redo 重做
+insert 插入/delete 移除,
+add 加入/append 添加
+clean 清理/clear 清除,
+index 索引/sort 排序
+find 查找/search 搜索,
+increase 增加/decrease 减少
+play 播放/pause 暂停,
+launch 启动/run 运行
+compile 编译/execute 执行,
+debug 调试/trace 跟踪
+observe 观察/listen 监听,
+build 构建/publish 发布
+input 输入/output 输出,
+encode 编码/decode 解码
+encrypt 加密/decrypt 解密,
+compress 压缩/decompress 解压缩
+pack 打包/unpack 解包,
+parse 解析/emit 生成
+connect 连接/disconnect 断开,
+send 发送/receive 接收
+download 下载/upload 上传,
+refresh 刷新/synchronize 同步
+update 更新/revert 复原,
+lock 锁定/unlock 解锁
+check out 签出/check in 签入,
+submit 提交/commit 交付
+push 推/pull 拉,
+expand 展开/collapse 折叠
+begin 起始/end 结束,
+start 开始/finish 完成
+enter 进入/exit 退出,
+abort 放弃/quit 离开
+obsolete 废弃/depreciate 废旧,
+collect 收集/aggregate 聚集
+
+```
+### 多个属性的标签元素规范
+
+```
+
+<!-- bad -->
+<image src="https://user-gold-cdn.xitu.io/2020/4/27/171bab9e9687bb00?w=400&h=400&f=png&s=3451" class="image-class" />
+<my-component foo="fooattribute" bar="barattribute" baz="bazattribute"></my-component>
+
+<!-- good -->
+<image
+  src="https://user-gold-cdn.xitu.io/2020/4/27/171bab9e9687bb00?w=400&h=400&f=png&s=3451"
+  class="image-class"
+>
+<my-component
+  foo="fooattribute"
+  bar="barattribute"
+  baz="bazattribute"
+>
+</my-component>
+
+```
+
+### 元素属性的顺序
+
+官方属性放前面，自定义属性放后面，然后指令最后
+
+```
+
+  - class
+  - id
+  - src
+  - data-*
+  - wx:for
+  - bind:tap
+  ...
+
+```
