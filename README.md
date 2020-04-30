@@ -83,7 +83,7 @@
 
 [JS 总结](https://juejin.im/post/5e9f0bdce51d4546f5791989)
 
-[JS 标准参考](https://javascript.ruanyifeng.com/)
+[~~JS 标准参考~~ ](https://javascript.ruanyifeng.com/) 停止维护可访问
 
 # GIT 操作
 
