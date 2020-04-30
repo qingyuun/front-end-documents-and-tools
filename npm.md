@@ -247,14 +247,74 @@ $ npm list underscore
 
 ## npm deprecate
 
+如果想废弃某个版本的模块，可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;npm deprecate&nbsp;&nbsp;-}&nbsp;&nbsp;命令。
+
+$ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
+运行上面的命令以后，小于&nbsp;&nbsp;{-&nbsp;&nbsp;0.2.3&nbsp;&nbsp;-}&nbsp;&nbsp;版本的模块的&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;都会写入一行警告，用户安装这些版本时，这行警告就会在命令行显示。
+
 ## npm owner
+
+模块的维护者可以发布新版本。&nbsp;&nbsp;{-&nbsp;&nbsp;npm owner&nbsp;&nbsp;-}&nbsp;&nbsp;命令用于管理模块的维护者。
+
+```
+
+# 列出指定模块的维护者
+$ npm owner ls <package name>
+
+# 新增维护者
+$ npm owner add <user> <package name>
+
+# 删除维护者
+$ npm owner rm <user> <package name>
+
+```
 
 ## 其他命令
 
 ### npm home & npm repo
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm home&nbsp;&nbsp;-}&nbsp;&nbsp;命令可以打开一个模块的主页，&nbsp;&nbsp;{-&nbsp;&nbsp;npm repo&nbsp;&nbsp;-}&nbsp;&nbsp;命令则是打开一个模块的代码仓库。
+
+```
+
+$ npm home $package
+$ npm repo $package
+
+```
+
+这两个命令不需要模块先安装。
+
 ### npm outdated
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm outdated&nbsp;&nbsp;-}&nbsp;&nbsp;命令检查当前项目所依赖的模块，是否已经有新版本。
+
+```
+
+$ npm outdated
+
+```
+它会输出当前版本（current version）、应当安装的版本（wanted version）和最新发布的版本（latest version）。
 
 ### npm prune
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm prune&nbsp;&nbsp;-}&nbsp;&nbsp;检查当前项目的&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules&nbsp;&nbsp;-}&nbsp;&nbsp;目录中，是否有&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;里面没有提到的模块，然后将所有这些模块输出在命令行。
+
+```
+
+$ npm prune
+
+```
+
 ### npm shrinkwrap
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm shrinkwrap&nbsp;&nbsp;-}&nbsp;&nbsp;的作用是锁定当前项目的依赖模块的版本。
+
+```
+
+$ npm shrinkwrap
+
+```
+
+运行该命令后，会在当前项目的根目录下生成一个&nbsp;&nbsp;{-&nbsp;&nbsp;npm-shrinkwrap.json&nbsp;&nbsp;-}&nbsp;&nbsp;文件，内容是&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules&nbsp;&nbsp;-}&nbsp;&nbsp;目录下所有已经安装的模块，以及它们的精确版本。
+
+下次运行&nbsp;&nbsp;{-&nbsp;&nbsp;npm install&nbsp;&nbsp;-}&nbsp;&nbsp;命令时，&nbsp;&nbsp;{-&nbsp;&nbsp;npm&nbsp;&nbsp;-}&nbsp;&nbsp;发现当前目录下有&nbsp;&nbsp;{-&nbsp;&nbsp;npm-shrinkwrap.json&nbsp;&nbsp;-}&nbsp;&nbsp;文件，就会只安装里面提到的模块，且版本也会保持一致。
