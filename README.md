@@ -253,7 +253,15 @@ $ git merge 命令找回
 
 ```
 
+# NPM 相关操作
 
+```
+
+npm init
+
+npm install <package-name> 
+
+```
 
 # 代码片段
 
