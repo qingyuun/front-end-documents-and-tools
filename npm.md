@@ -229,6 +229,40 @@ $ npm list underscore
 
 ### 参数
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm run&nbsp;&nbsp;-}&nbsp;&nbsp;命令还可以添加参数。
+
+```
+
+"scripts": {
+  "test": "mocha test/"
+}
+
+```
+
+上面代码指定&nbsp;&nbsp;{-&nbsp;&nbsp;npm test&nbsp;&nbsp;-}&nbsp;&nbsp;，实际运行&nbsp;&nbsp;{-&nbsp;&nbsp;mocha test/&nbsp;&nbsp;-}&nbsp;&nbsp;。如果要通过&nbsp;&nbsp;{-&nbsp;&nbsp;npm test&nbsp;&nbsp;-}&nbsp;&nbsp;命令，将参数传到mocha，则参数之前要加上两个连词线。
+
+```
+
+$ npm run test -- anothertest.js
+# 等同于
+$ mocha test/ anothertest.js
+
+```
+
+上面命令表示，mocha要运行所有&nbsp;&nbsp;{-&nbsp;&nbsp;test&nbsp;&nbsp;-}&nbsp;&nbsp;子目录的测试脚本，以及另外一个测试脚本&nbsp;&nbsp;{-&nbsp;&nbsp;anothertest.js&nbsp;&nbsp;-}&nbsp;&nbsp;。
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm run&nbsp;&nbsp;-}&nbsp;&nbsp;本身有一个参数&nbsp;&nbsp;{-&nbsp;&nbsp;-s&nbsp;&nbsp;-}&nbsp;&nbsp;，表示关闭npm本身的输出，只输出脚本产生的结果。
+
+```
+
+// 输出npm命令头
+$ npm run test
+
+// 不输出npm命令头
+$ npm run -s test
+
+```
+
 ### scripts 脚本命令最佳实践
 
 ### pre- & post- 脚本
