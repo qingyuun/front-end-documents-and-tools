@@ -237,19 +237,141 @@ $ npm list underscore
 
 ### 通配符
 
+npm的通配符的规则如下。
+
+```
+
+> * 匹配0个或多个字符= 
+
+> 匹配1个字符
+
+> [...] 匹配某个范围的字符。如果该范围的第一个字符是!或^，则匹配不在该范围的字符。
+
+> !(pattern|pattern|pattern) 匹配任何不符合给定的模式
+
+> ?(pattern|pattern|pattern) 匹配0个或1个给定的模式
+
+> +(pattern|pattern|pattern) 匹配1个或多个给定的模式
+
+> *(a|b|c) 匹配0个或多个给定的模式
+
+> @(pattern|pat*|pat?erN) 只匹配给定模式之一
+
+> ** 如果出现在路径部分，表示0个或多个子目录。
+
+```
+
 ## npm link
 
 ## npm bin
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm bin&nbsp;&nbsp;-}&nbsp;&nbsp;命令显示相对于当前目录的，Node模块的可执行脚本所在的目录（即.bin目录）。
+
+```
+
+# 项目根目录下执行
+$ npm bin
+./node_modules/.bin
+
+```
+
 ## npm adduser
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm adduser&nbsp;&nbsp;-}&nbsp;&nbsp;用于在npmjs.com注册一个用户。
+
+```
+
+$ npm adduser
+Username: YOUR_USER_NAME
+Password: YOUR_PASSWORD
+Email: YOUR_EMAIL@domain.com
+
+```
+
 ## npm publish
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm publish&nbsp;&nbsp;-}&nbsp;&nbsp;用于将当前模块发布到&nbsp;&nbsp;{-&nbsp;&nbsp;npmjs.com&nbsp;&nbsp;-}&nbsp;&nbsp;。执行之前，需要向&nbsp;&nbsp;{-&nbsp;&nbsp;npmjs.com&nbsp;&nbsp;-}&nbsp;&nbsp;申请用户名。
+
+```
+
+$ npm adduser
+
+```
+
+如果已经注册过，就使用下面的命令登录。
+
+```
+
+$ npm login
+
+```
+
+登录以后，就可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;npm publish&nbsp;&nbsp;-}&nbsp;&nbsp;命令发布。
+
+```
+
+$ npm publish
+
+```
+
+如果当前模块是一个beta版，比如&nbsp;&nbsp;{-&nbsp;&nbsp;1.3.1-beta.3&nbsp;&nbsp;-}&nbsp;&nbsp;，那么发布的时候需要使用&nbsp;&nbsp;{-&nbsp;&nbsp;tag&nbsp;&nbsp;-}&nbsp;&nbsp;参数，将其发布到指定标签，默认的发布标签是&nbsp;&nbsp;{-&nbsp;&nbsp;latest&nbsp;&nbsp;-}&nbsp;&nbsp;。
+
+```
+
+$ npm publish --tag beta
+
+```
+
+如果发布私有模块，模块初始化的时候，需要加上&nbsp;&nbsp;{-&nbsp;&nbsp;scope&nbsp;&nbsp;-}&nbsp;&nbsp;参数。只有npm的付费用户才能发布私有模块。
+
+```
+
+$ npm init --scope=<yourscope>
+
+```
+
+如果你的模块是用ES6写的，那么发布的时候，最好转成ES5。首先，需要安装Babel。
+
+```
+
+$ npm install --save-dev babel-cli@6 babel-preset-es2015@6
+
+```
+
+然后，在&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;里面写入&nbsp;&nbsp;{-&nbsp;&nbsp;build&nbsp;&nbsp;-}&nbsp;&nbsp;脚本。
+
+```
+
+"scripts": {
+  "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
+  "prepublish": "npm run build"
+}
+
+```
+
+运行上面的脚本，会将&nbsp;&nbsp;{-&nbsp;&nbsp;source&nbsp;&nbsp;-}&nbsp;&nbsp;目录里面的ES6源码文件，转为&nbsp;&nbsp;{-&nbsp;&nbsp;distribution&nbsp;&nbsp;-}&nbsp;&nbsp;目录里面的ES5源码文件。然后，在项目根目录下面创建两个文件&nbsp;&nbsp;{-&nbsp;&nbsp;.npmignore&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;.gitignore&nbsp;&nbsp;-}&nbsp;&nbsp;，分别写入以下内容。
+
+```
+
+// .npmignore
+source
+
+// .gitignore
+node_modules
+distribution
+
+```
 
 ## npm deprecate
 
 如果想废弃某个版本的模块，可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;npm deprecate&nbsp;&nbsp;-}&nbsp;&nbsp;命令。
 
+```
+
 $ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
+
+```
+
 运行上面的命令以后，小于&nbsp;&nbsp;{-&nbsp;&nbsp;0.2.3&nbsp;&nbsp;-}&nbsp;&nbsp;版本的模块的&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;都会写入一行警告，用户安装这些版本时，这行警告就会在命令行显示。
 
 ## npm owner
