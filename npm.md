@@ -227,10 +227,10 @@ $ npm list underscore
 
 &nbsp;&nbsp;{-&nbsp;&nbsp;npm update&nbsp;&nbsp;-}&nbsp;&nbsp;命令可以更新本地安装的模块。
 
+```
+
 # 升级当前项目的指定模块
 $ npm update [package name]
-
-```
 
 # 升级全局安装的模块
 $ npm update -global [package name]
