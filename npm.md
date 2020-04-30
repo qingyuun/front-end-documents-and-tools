@@ -233,7 +233,171 @@ $ npm list underscore
 
 ### pre- & post- 脚本
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm run&nbsp;&nbsp;-}&nbsp;&nbsp;为每条命令提供了&nbsp;&nbsp;{-&nbsp;&nbsp;pre-&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;post-&nbsp;&nbsp;-}&nbsp;&nbsp;两个钩子（hook）。以&nbsp;&nbsp;{-&nbsp;&nbsp;npm run lint&nbsp;&nbsp;-}&nbsp;&nbsp;为例，执行这条命令之前，npm会先查看有没有定义prelint和postlint两个钩子，如果有的话，就会先执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run prelint&nbsp;&nbsp;-}&nbsp;&nbsp;，然后执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run lint&nbsp;&nbsp;-}&nbsp;&nbsp;，最后执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run postlint&nbsp;&nbsp;-}&nbsp;&nbsp;。
+
+```
+
+{
+  "name": "myproject",
+  "devDependencies": {
+    "eslint": "latest"
+    "karma": "latest"
+  },
+  "scripts": {
+    "lint": "eslint --cache --ext .js --ext .jsx src",
+    "test": "karma start --log-leve=error karma.config.js --single-run=true",
+    "pretest": "npm run lint",
+    "posttest": "echo 'Finished running tests'"
+  }
+}
+
+```
+
+上面代码是一个&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;文件的例子。如果执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm test&nbsp;&nbsp;-}&nbsp;&nbsp;，会按下面的顺序执行相应的命令。
+
+```
+
+> pretest
+> test
+> posttest
+
+```
+如果执行过程出错，就不会执行排在后面的脚本，即如果prelint脚本执行出错，就不会接着执行lint和postlint脚本。
+
+下面是一个例子。
+
+```
+
+{
+  "test": "karma start",
+  "test:lint": "eslint . --ext .js --ext .jsx",
+  "pretest": "npm run test:lint"
+}
+
+```
+
+上面代码中，在运行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run test&nbsp;&nbsp;-}&nbsp;&nbsp;之前，会自动检查代码，即运行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run test:lint&nbsp;&nbsp;-}&nbsp;&nbsp;命令。
+
+下面是一些常见的&nbsp;&nbsp;{-&nbsp;&nbsp;pre-&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;post-&nbsp;&nbsp;-}&nbsp;&nbsp;脚本。
+
+```
+> prepublish：发布一个模块前执行。
+> postpublish：发布一个模块后执行。
+> preinstall：用户执行npm install命令时，先执行该脚本。
+> postinstall：用户执行npm install命令时，安装结束后执行该脚本，通常用于将下载的源码编译成用户需要的格式，比如有些模块需要在用户机器上跟本地的C++模块一起编译。
+> preuninstall：卸载一个模块前执行。
+> postuninstall：卸载一个模块后执行。
+> preversion：更改模块版本前执行。
+> postversion：更改模块版本后执行。
+> pretest：运行npm test命令前执行。
+> posttest：运行npm test命令后执行。
+> prestop：运行npm stop命令前执行。
+> poststop：运行npm stop命令后执行。
+> prestart：运行npm start命令前执行。
+> poststart：运行npm start命令后执行。
+> prerestart：运行npm restart命令前执行。
+> postrestart：运行npm restart命令后执行。
+
+```
+
+对于最后一个&nbsp;&nbsp;{-&nbsp;&nbsp;npm restart&nbsp;&nbsp;-}&nbsp;&nbsp;命令，如果没有设置&nbsp;&nbsp;{-&nbsp;&nbsp;restart&nbsp;&nbsp;-}&nbsp;&nbsp;脚本，&nbsp;&nbsp;{-&nbsp;&nbsp;prerestart&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;postrestart&nbsp;&nbsp;-}&nbsp;&nbsp;会依次执行stop和start脚本。
+
+另外，不能在&nbsp;&nbsp;{-&nbsp;&nbsp;pre&nbsp;&nbsp;-}&nbsp;&nbsp;脚本之前再加&nbsp;&nbsp;{-&nbsp;&nbsp;pre&nbsp;&nbsp;-}&nbsp;&nbsp;，即&nbsp;&nbsp;{-&nbsp;&nbsp;prepretest&nbsp;&nbsp;-}&nbsp;&nbsp;脚本不起作用。
+
+注意，即使Npm可以自动运行&nbsp;&nbsp;{-&nbsp;&nbsp;pre&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;post&nbsp;&nbsp;-}&nbsp;&nbsp;脚本，也可以手动执行它们。
+
+```
+
+$ npm run prepublish
+
+```
+
+下面是&nbsp;&nbsp;{-&nbsp;&nbsp;post install&nbsp;&nbsp;-}&nbsp;&nbsp;的例子。
+
+```
+
+{
+  "postinstall": "node lib/post_install.js"
+}
+
+```
+
+上面的这个命令，主要用于处理从Git仓库拉下来的源码。比如，有些源码是用TypeScript写的，可能需要转换一下。
+
+下面是&nbsp;&nbsp;{-&nbsp;&nbsp;publish&nbsp;&nbsp;-}&nbsp;&nbsp;钩子的一个例子。
+
+```
+
+{
+  "dist:modules": "babel ./src --out-dir ./dist-modules",
+  "gh-pages": "webpack",
+  "gh-pages:deploy": "gh-pages -d gh-pages",
+  "prepublish": "npm run dist:modules",
+  "postpublish": "npm run gh-pages && npm run gh-pages:deploy"
+}
+
+```
+
+上面命令在运行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run publish&nbsp;&nbsp;-}&nbsp;&nbsp;时，会先执行Babel编译，然后调用Webpack构建，最后发到Github Pages上面。
+
+以上都是npm相关操作的钩子，如果安装某些模块，还能支持Git相关的钩子。下面以[husky](https://github.com/typicode/husky)模块为例。
+
+```
+
+$ npm install husky --save-dev
+
+```
+
+安装以后，就能在&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;添加&nbsp;&nbsp;{-&nbsp;&nbsp;precommit&nbsp;&nbsp;-}&nbsp;&nbsp;、&nbsp;&nbsp;{-&nbsp;&nbsp;prepush&nbsp;&nbsp;-}&nbsp;&nbsp;等钩子。
+
+```
+
+{
+    "scripts": {
+        "lint": "eslint yourJsFiles.js",
+        "precommit": "npm run test && npm run lint",
+        "prepush": "npm run test && npm run lint",
+        "...": "..."
+    }
+}
+
+```
+
+类似作用的模块还有&nbsp;&nbsp;{-&nbsp;&nbsp;pre-commit&nbsp;&nbsp;-}&nbsp;&nbsp;、&nbsp;&nbsp;{-&nbsp;&nbsp;precommit-hook&nbsp;&nbsp;-}&nbsp;&nbsp;等。
+
 ### 内部变量
+
+scripts字段可以使用一些内部变量，主要是package.json的各种字段。
+
+比如，package.json的内容是&nbsp;&nbsp;{-&nbsp;&nbsp;{"name":"foo", "version":"1.2.5"}&nbsp;&nbsp;-}&nbsp;&nbsp;，那么变量&nbsp;&nbsp;{-&nbsp;&nbsp;npm_package_name&nbsp;&nbsp;-}&nbsp;&nbsp;的值是foo，变量&nbsp;&nbsp;{-&nbsp;&nbsp;npm_package_version&nbsp;&nbsp;-}&nbsp;&nbsp;的值是1.2.5。
+
+```
+
+{
+  "scripts":{
+    "bundle": "mkdir -p build/$npm_package_version/"
+  }
+}
+
+```
+
+运行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run bundle&nbsp;&nbsp;-}&nbsp;&nbsp;以后，将会生成&nbsp;&nbsp;{-&nbsp;&nbsp;build/1.2.5/&nbsp;&nbsp;-}&nbsp;&nbsp;子目录。
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;config&nbsp;&nbsp;-}&nbsp;&nbsp;字段也可以用于设置内部字段。
+
+```
+
+  "name": "fooproject",
+  "config": {
+    "reporter": "xunit"
+  },
+  "scripts": {
+    "test": "mocha test/ --reporter $npm_package_config_reporter"
+  }
+  
+```
+
+上面代码中，变量&nbsp;&nbsp;{-&nbsp;&nbsp;npm_package_config_reporter&nbsp;&nbsp;-}&nbsp;&nbsp;对应的就是reporter。
 
 ### 通配符
 
