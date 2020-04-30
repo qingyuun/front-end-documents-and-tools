@@ -225,6 +225,55 @@ $ npm list underscore
 
 ## npm update & npm uninstall
 
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm update&nbsp;&nbsp;-}&nbsp;&nbsp;命令可以更新本地安装的模块。
+
+# 升级当前项目的指定模块
+$ npm update [package name]
+
+```
+
+# 升级全局安装的模块
+$ npm update -global [package name]
+
+```
+
+它会先到远程仓库查询最新版本，然后查询本地版本。如果本地版本不存在，或者远程版本较新，就会安装。
+
+使用&nbsp;&nbsp;{-&nbsp;&nbsp;-S&nbsp;&nbsp;-}&nbsp;&nbsp;或&nbsp;&nbsp;{-&nbsp;&nbsp;--save&nbsp;&nbsp;-}&nbsp;&nbsp;参数，可以在安装的时候更新&nbsp;&nbsp;{-&nbsp;&nbsp;package.json&nbsp;&nbsp;-}&nbsp;&nbsp;里面模块的版本号。
+
+```
+
+// 更新之前的package.json
+dependencies: {
+  dep1: "^1.1.1"
+}
+
+// 更新之后的package.json
+dependencies: {
+  dep1: "^1.2.2"
+}
+
+```
+
+注意，从npm v2.6.1 开始，&nbsp;&nbsp;{-&nbsp;&nbsp;npm update&nbsp;&nbsp;-}&nbsp;&nbsp;只更新顶层模块，而不更新依赖的依赖，以前版本是递归更新的。如果想取到老版本的效果，要使用下面的命令。
+
+```
+
+$ npm --depth 9999 update
+
+```
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm uninstall&nbsp;&nbsp;-}&nbsp;&nbsp;命令，卸载已安装的模块。
+
+```
+
+$ npm uninstall [package name]
+
+# 卸载全局模块
+$ npm uninstall [package name] -global
+
+```
+
 ## npm run
 
 ### 参数
