@@ -26,13 +26,16 @@
 
 [vue 使用 vue-pdf 实现在线预览](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/vue-pdf.md)
     
-# Node 相关文档
+# Node & Npm 相关文档
 
 [Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
 
 [Npm 官方文档:https://www.npmjs.com/](https://www.npmjs.com/)
 
 [Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
+
+[Npm 相关命令](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/npm.md)
+
 
 # UI框架
 
@@ -168,15 +171,6 @@ $ git merge 命令找回
 
 ```
 
-# NPM 相关操作
-
-```
-
-npm init
-
-npm install <package-name> 
-
-```
 
 # VSCode 
 
