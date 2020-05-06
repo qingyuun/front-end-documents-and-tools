@@ -245,7 +245,7 @@ $ npm install git://github.com/package/path.git#0.1.0
 
 安装之前&nbsp;&nbsp;{-&nbsp;&nbsp;，npm install&nbsp;&nbsp;-}&nbsp;&nbsp;会先检查，&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules&nbsp;&nbsp;-}&nbsp;&nbsp;目录之中是否已经存在指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。
 
-如果你希望，一个模块不管是否安装过，npm 都要强制重新安装，可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;-f&nbsp;&nbsp;-}&nbsp;&nbsp;或&nbsp;&nbsp;{-&nbsp;&nbsp;--force&nbsp;&nbsp;-]&nbsp;&nbsp;参数。
+如果你希望，一个模块不管是否安装过，npm 都要强制重新安装，可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;-f&nbsp;&nbsp;-}&nbsp;&nbsp;或&nbsp;&nbsp;{-&nbsp;&nbsp;--force&nbsp;&nbsp;-}&nbsp;&nbsp;参数。
 
 ```
 
