@@ -219,9 +219,148 @@ $ npm list underscore
 
 ### 基本用法
 
+Node模块采用&nbsp;&nbsp;{-&nbsp;&nbsp;npm install&nbsp;&nbsp;-}&nbsp;&nbsp;命令安装。
+
+每个模块可以“全局安装”，也可以“本地安装”。“全局安装”指的是将一个模块安装到系统目录中，各个项目都可以调用。一般来说，全局安装只适用于工具模块，比如&nbsp;&nbsp;{-&nbsp;&nbsp;eslint&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;gulp&nbsp;&nbsp;-}&nbsp;&nbsp;。“本地安装”指的是将一个模块下载到当前项目的&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules子&nbsp;&nbsp;-}&nbsp;&nbsp;目录，然后只有在项目目录之中，才能调用这个模块。
+
+```
+
+# 本地安装
+$ npm install <package name>
+
+# 全局安装
+$ sudo npm install -global <package name>
+$ sudo npm install -g <package name>
+
+```
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm install&nbsp;&nbsp;-}&nbsp;&nbsp;也支持直接输入Github代码库地址。
+
+```
+
+$ npm install git://github.com/package/path.git
+$ npm install git://github.com/package/path.git#0.1.0
+
+```
+
+安装之前&nbsp;&nbsp;{-&nbsp;&nbsp;，npm install&nbsp;&nbsp;-】&nbsp;&nbsp;会先检查，&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules&nbsp;&nbsp;-}&nbsp;&nbsp;目录之中是否已经存在指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。
+
+如果你希望，一个模块不管是否安装过，npm 都要强制重新安装，可以使用&nbsp;&nbsp;{-&nbsp;&nbsp;-f&nbsp;&nbsp;-}&nbsp;&nbsp;或&nbsp;&nbsp;{-&nbsp;&nbsp;--force&nbsp;&nbsp;-]&nbsp;&nbsp;参数。
+
+```
+
+$ npm install <packageName> --force
+
+```
+
+如果你希望，所有模块都要强制重新安装，那就删除&nbsp;&nbsp;{-&nbsp;&nbsp;node_modules&nbsp;&nbsp;-}&nbsp;&nbsp;目录，重新执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm install&nbsp;&nbsp;-}&nbsp;&nbsp;。
+
+```
+
+$ rm -rf node_modules
+$ npm install
+
+```
+
 ### 安装不同版本
 
+install命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块名后面加上@和版本号。
+
+```
+
+$ npm install sax@latest
+$ npm install sax@0.1.1
+$ npm install sax@">=0.1.0 <0.2.0"
+
+```
+
+如果使用&nbsp;&nbsp;{-&nbsp;&nbsp;--save-exact&nbsp;&nbsp;-}&nbsp;&nbsp;参数，会在package.json文件指定安装模块的确切版本。
+
+```
+
+$ npm install readable-stream --save --save-exact
+
+```
+
+install命令可以使用不同参数，指定所安装的模块属于哪一种性质的依赖关系，即出现在packages.json文件的哪一项中。
+
+```
+
+> –save：模块名将被添加到dependencies，可以简化为参数-S。
+> –save-dev: 模块名将被添加到devDependencies，可以简化为参数-D。
+
+```
+
+```
+
+$ npm install sax --save
+$ npm install node-tap --save-dev
+# 或者
+$ npm install sax -S
+$ npm install node-tap -D
+
+```
+
+如果要安装beta版本的模块，需要使用下面的命令。
+
+```
+
+# 安装最新的beta版
+$ npm install <module-name>@beta (latest beta)
+
+# 安装指定的beta版
+$ npm install <module-name>@1.3.1-beta.3
+
+```
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;npm install&nbsp;&nbsp;-}&nbsp;&nbsp;默认会安装&nbsp;&nbsp;{-&nbsp;&nbsp;dependencies&nbsp;&nbsp;-}&nbsp;&nbsp;字段和&nbsp;&nbsp;{-&nbsp;&nbsp;devDependencies&nbsp;&nbsp;-}&nbsp;&nbsp;字段中的所有模块，如果使用&nbsp;&nbsp;{-&nbsp;&nbsp;--production&nbsp;&nbsp;-}&nbsp;&nbsp;参数，可以只安装&nbsp;&nbsp;{-&nbsp;&nbsp;dependencies&nbsp;&nbsp;-}&nbsp;&nbsp;字段的模块。
+
+```
+
+$ npm install --production
+# 或者
+$ NODE_ENV=production npm install
+
+```
+
+一旦安装了某个模块，就可以在代码中用&nbsp;&nbsp;{-&nbsp;&nbsp;require&nbsp;&nbsp;-}&nbsp;&nbsp;命令加载这个模块。
+
+```
+
+var backbone = require('backbone')
+console.log(backbone.VERSION)
+
+```
+
 ### 避免系统权限
+
+默认情况下，Npm全局模块都安装在系统目录（比如&nbsp;&nbsp;{-&nbsp;&nbsp;/usr/local/lib/&nbsp;&nbsp;-}&nbsp;&nbsp;），普通用户没有写入权限，需要用到&nbsp;&nbsp;{-&nbsp;&nbsp;sudo&nbsp;&nbsp;-}&nbsp;&nbsp;命令。这不是很方便，我们可以在没有root权限的情况下，安装全局模块。
+
+首先，在主目录下新建配置文件&nbsp;&nbsp;{-&nbsp;&nbsp;.npmrc&nbsp;&nbsp;-}&nbsp;&nbsp;，然后在该文件中将&nbsp;&nbsp;{-&nbsp;&nbsp;prefix&nbsp;&nbsp;-}&nbsp;&nbsp;变量定义到主目录下面。
+
+```
+
+prefix = /home/yourUsername/npm
+
+```
+
+然后在主目录下新建&nbsp;&nbsp;{-&nbsp;&nbsp;npm&nbsp;&nbsp;-}&nbsp;&nbsp;子目录。
+
+```
+
+$ mkdir ~/npm
+
+```
+
+此后，全局安装的模块都会安装在这个子目录中，npm也会到&nbsp;&nbsp;{-&nbsp;&nbsp;~/npm/bin&nbsp;&nbsp;-}&nbsp;&nbsp;目录去寻找命令。
+
+最后，将这个路径在&nbsp;&nbsp;{-&nbsp;&nbsp;.bash_profile&nbsp;&nbsp;-}&nbsp;&nbsp;文件（或&nbsp;&nbsp;{-&nbsp;&nbsp;.bashrc&nbsp;&nbsp;-}&nbsp;&nbsp;文件）中加入PATH变量。
+
+```
+
+export PATH=~/npm/bin:$PATH
+
+```
 
 ## npm update & npm uninstall
 
