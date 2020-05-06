@@ -314,6 +314,177 @@ $ npm run -s test
 
 ### scripts 脚本命令最佳实践
 
+scripts字段的脚本命令，有一些最佳实践，可以方便开发。首先，安装npm-run-all模块。
+
+```
+
+$ npm install npm-run-all --save-dev
+
+```
+
+这个模块用于运行多个scripts脚本命令。
+
+```
+
+# 继发执行
+$ npm-run-all build:html build:js
+# 等同于
+$ npm run build:html && npm run build:js
+
+# 并行执行
+$ npm-run-all --parallel watch:html watch:js
+# 等同于
+$ npm run watch:html & npm run watch:js
+
+# 混合执行
+$ npm-run-all clean lint --parallel watch:html watch:js
+# 等同于
+$ npm-run-all clean lint
+$ npm-run-all --parallel watch:html watch:js
+
+# 通配符
+$ npm-run-all --parallel watch:*
+
+```
+
+(1)start脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;start&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令，用于启动应用程序。
+
+```
+
+"start": "npm-run-all --parallel dev serve"
+
+```
+
+上面命令并行执行&nbsp;&nbsp;{-&nbsp;&nbsp;dev&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令和&nbsp;&nbsp;{-&nbsp;&nbsp;serve&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令，等同于下面的形式。
+
+```
+
+$ npm run dev & npm run serve
+
+```
+
+如果start脚本没有配置，&nbsp;&nbsp;{-&nbsp;&nbsp;npm start&nbsp;&nbsp;-}&nbsp;&nbsp;命令默认执行下面的脚本，前提是模块的根目录存在一个server.js文件。
+
+```
+
+$ node server.js
+
+```
+
+(2)dev脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;dev&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令，规定开发阶段所要做的处理，比如构建网页资源。
+
+```
+
+"dev": "npm-run-all dev:*"
+
+```
+
+上面命令用于继发执行所有&nbsp;&nbsp;{-&nbsp;&nbsp;dev&nbsp;&nbsp;-}&nbsp;&nbsp;的子命令。
+
+```
+
+"predev:sass": "node-sass --source-map src/css/hoodie.css.map --output-style nested src/sass/base.scss src/css/hoodie.css"
+
+```
+
+上面命令将sass文件编译为css文件，并生成source map文件。
+
+```
+
+"dev:sass": "node-sass --source-map src/css/hoodie.css.map --watch --output-style nested src/sass/base.scss src/css/hoodie.css"
+
+```
+
+上面命令会监视sass文件的变动，只要有变动，就自动将其编译为css文件。
+
+```
+
+"dev:autoprefix": "postcss --use autoprefixer --autoprefixer.browsers \"> 5%\" --output src/css/hoodie.css src/css/hoodie.css"
+
+```
+
+上面命令为css文件加上浏览器前缀，限制条件是只考虑市场份额大于5%的浏览器。
+
+(3)serve脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;serve&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令用于启动服务。
+
+```
+
+"serve": "live-server dist/ --port=9090"
+
+```
+
+上面命令启动服务，用的是live-server模块，将服务启动在9090端口，展示dist子目录。
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;live-server&nbsp;&nbsp;-}&nbsp;&nbsp;模块有三个功能。
+
+```
+
+> 启动一个HTTP服务器，展示指定目录的 index.html 文件，通过该文件加载各种网络资源，这是file://协议做不到的。
+
+> 添加自动刷新功能。只要指定目录之中，文件有任何变化，它就会刷新页面。
+
+> npm run serve命令执行以后，自动打开浏览器。、
+
+```
+以前，上面三个功能需要三个模块来完成：&nbsp;&nbsp;{-&nbsp;&nbsp;http-server&nbsp;&nbsp;-}&nbsp;&nbsp;、&nbsp;&nbsp;{-&nbsp;&nbsp;live-reload&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;opener&nbsp;&nbsp;-}&nbsp;&nbsp;，现在只要&nbsp;&nbsp;{-&nbsp;&nbsp;live-server&nbsp;&nbsp;-}&nbsp;&nbsp;一个模块就够了。
+
+(4)test脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;test&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令用于执行测试。
+
+```
+
+"test": "npm-run-all test:*",
+"test:lint": "sass-lint --verbose --config .sass-lint.yml src/sass/*"
+
+```
+
+上面命令规定，执行测试时，运行&nbsp;&nbsp;{-&nbsp;&nbsp;lint&nbsp;&nbsp;-}&nbsp;&nbsp;脚本，检查脚本之中的语法错误。
+
+(5)prod脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;prod&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令，规定进入生产环境时需要做的处理。
+
+```
+
+"prod": "npm-run-all prod:*",
+"prod:sass": "node-sass --output-style compressed src/sass/base.scss src/css/prod/hoodie.min.css",
+"prod:autoprefix": "postcss --use autoprefixer --autoprefixer.browsers "> 5%" --output src/css/prod/hoodie.min.css src/css/prod/hoodie.min.css"
+
+```
+
+上面命令将sass文件转为css文件，并加上浏览器前缀。
+
+(6)help脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;help&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令用于展示帮助信息。
+
+```
+
+"help": "markdown-chalk --input DEVELOPMENT.md"
+
+```
+
+上面命令之中，&nbsp;&nbsp;{-&nbsp;&nbsp;markdown-chalk&nbsp;&nbsp;-}&nbsp;&nbsp;模块用于将指定的markdown文件，转为彩色文本显示在终端之中。
+
+(7)docs脚本命令
+
+&nbsp;&nbsp;{-&nbsp;&nbsp;docs&nbsp;&nbsp;-}&nbsp;&nbsp;脚本命令用于生成文档。
+
+```
+
+"docs": "kss-node --source src/sass --homepage ../../styleguide.md"
+
+```
+
+上面命令使用&nbsp;&nbsp;{-&nbsp;&nbsp;kss-node&nbsp;&nbsp;-}&nbsp;&nbsp;模块，提供源码的注释生成markdown格式的文档。
+
 ### pre- & post- 脚本
 
 &nbsp;&nbsp;{-&nbsp;&nbsp;npm run&nbsp;&nbsp;-}&nbsp;&nbsp;为每条命令提供了&nbsp;&nbsp;{-&nbsp;&nbsp;pre-&nbsp;&nbsp;-}&nbsp;&nbsp;和&nbsp;&nbsp;{-&nbsp;&nbsp;post-&nbsp;&nbsp;-}&nbsp;&nbsp;两个钩子（hook）。以&nbsp;&nbsp;{-&nbsp;&nbsp;npm run lint&nbsp;&nbsp;-}&nbsp;&nbsp;为例，执行这条命令之前，npm会先查看有没有定义prelint和postlint两个钩子，如果有的话，就会先执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run prelint&nbsp;&nbsp;-}&nbsp;&nbsp;，然后执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run lint&nbsp;&nbsp;-}&nbsp;&nbsp;，最后执行&nbsp;&nbsp;{-&nbsp;&nbsp;npm run postlint&nbsp;&nbsp;-}&nbsp;&nbsp;。
