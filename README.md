@@ -7,7 +7,8 @@
 
 [前端开发代码规范](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/CodeFormatting.md)
 
-## Vue 相关文档
+
+# Vue 相关文档
 
 [Vue 官方文档：https://vuejs.org/index.html](https://vuejs.org/index.html)
         
@@ -19,13 +20,13 @@
 
 [Vue 相关视频: 百度网盘 提取码：mlw7](https://pan.baidu.com/s/1oUgoWKO_H-i6qd0moxMfvQ)
 
-## PDF 在线预览
+# PDF 在线预览
 
 [vue-pdf github 仓库地址](https://github.com/FranckFreiburger/vue-pdf)
 
 [vue 使用 vue-pdf 实现在线预览](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/vue-pdf.md)
     
-## Node 相关文档
+# Node & Npm 相关文档
 
 [Node 官方文档：https://nodejs.org/en/](https://nodejs.org/en/)
 
@@ -33,7 +34,10 @@
 
 [Node 多版本环境安装 + 多镜像直接切换](https://www.jianshu.com/p/344add85d050)
 
-## UI框架
+[Npm 相关命令](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/npm.md)
+
+
+# UI框架
 
 [Element-UI 官方文档:https://element.eleme.cn/](https://element.eleme.cn/)
 
@@ -43,7 +47,7 @@
 
 [D2 Admin 官方文档:https://fairyever.com/d2-admin/doc/](https://fairyever.com/d2-admin/doc/)
 
-## 小程序
+# 小程序
 
 [腾讯开发文档:https://open.tencent.com/](https://open.tencent.com/)
 
@@ -67,105 +71,19 @@
 
 [字节跳动小程序文档:https://developer.toutiao.com/docs/api/](https://developer.toutiao.com/docs/api/)
 
-## 跨平台开发
+# 跨平台开发
 
 [UNI-APP 官方文档:https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 
-## 时间日期格式化
+# 时间日期格式化
 
 [Moment.js 官方文档:https://momentjs.com/](https://momentjs.com/)
 
-## JS 相关文档
+# JS 相关文档
 
 [JS 总结](https://juejin.im/post/5e9f0bdce51d4546f5791989)
 
-# VSCode 
-
-
-### 编辑器代码格式化
-
-
-```
-    {
-      // 使能每一种语言默认格式化规则
-      "[html]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[css]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[less]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[javascript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      
-      /*  prettier的配置 */
-      "prettier.printWidth": 100, // 超过最大值换行
-      "prettier.tabWidth": 2, // 缩进字节数
-      "prettier.useTabs": false, // 缩进不使用tab，使用空格
-      "prettier.semi": true, // 句尾添加分号
-      "prettier.singleQuote": true, // 使用单引号代替双引号
-      "prettier.proseWrap": "preserve", // 默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
-      "prettier.arrowParens": "avoid", //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
-      "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
-      "prettier.disableLanguages": ["vue"], // 不格式化vue文件，vue文件的格式化单独设置
-      "prettier.endOfLine": "auto", // 结尾是 \n \r \n\r auto
-      "prettier.htmlWhitespaceSensitivity": "ignore",
-      "prettier.ignorePath": ".prettierignore", // 不使用prettier格式化的文件填写在项目的.prettierignore文件中
-      "prettier.jsxBracketSameLine": false, // 在jsx中把'>' 是否单独放一行
-      "prettier.jsxSingleQuote": false, // 在jsx中使用单引号代替双引号
-      "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
-      "prettier.trailingComma": "es5", // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
-      // "prettier.tslintIntegration": false, // 不让prettier使用tslint的代码格式进行校验
-      // "prettier.eslintIntegration": false, //不让prettier使用eslint的代码格式进行校验
-      // "prettier.stylelintIntegration": false, //不让prettier使用stylelint的代码格式进行校验
-      // "prettier.parser": "babylon", // 格式化的解析器，默认是babylon
-    
-      /* Vetur配置 */
-      "vetur.format.defaultFormatter.html": "prettier",
-      "vetur.format.defaultFormatter.js": "prettier",
-      "vetur.format.defaultFormatter.less": "prettier",
-      "vetur.format.defaultFormatterOptions": {
-        "prettier": {
-          "printWidth": 160,
-          "singleQuote": true, // 使用单引号
-          "semi": true, // 末尾使用分号
-          "tabWidth": 4,
-          "arrowParens": "avoid",
-          "bracketSpacing": true,
-          "proseWrap": "preserve" // 代码超出是否要换行 preserve保留
-        }
-      },
-    
-      /* 编辑器配置 */
-      "editor.tabSize": 2, // tab缩进空格数
-      "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
-      "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-      },
-      "javascript.updateImportsOnFileMove.enabled": "always",
-      "workbench.editor.enablePreview": false,
-      "diffEditor.ignoreTrimWhitespace": false, // 打开文件时在新标签打开
-      "explorer.compactFolders": false, // 空文件夹自动折叠
-      "problems.showCurrentInStatus": true, // 在状态栏显示错误信息
-    }
-    
-    
-    
-    ```
-    代码格式化配置参考文档
-    https://juejin.im/post/5cc58039f265da03775c5a6f
-    ```
-```
-
-### 编辑器代码格式化 搭配扩展
-
-![image](https://raw.githubusercontent.com/qingyuun/front-end-documents-and-tools/master/formatEX.jpg?token=AEZMGN7EJMVDCPU7W434WMK57LT62)
+[~~JS 标准参考~~ ](https://javascript.ruanyifeng.com/) 停止维护可访问
 
 # GIT 操作
 
@@ -254,12 +172,99 @@ $ git merge 命令找回
 ```
 
 
+# VSCode 
 
-# 代码片段
 
-## vscode 代码快捷生成 代码片段
+## 编辑器代码格式化
 
-#### NUXT VUEX
+
+```
+    {
+      // 使能每一种语言默认格式化规则
+      "[html]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[css]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[less]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      
+      /*  prettier的配置 */
+      "prettier.printWidth": 100, // 超过最大值换行
+      "prettier.tabWidth": 2, // 缩进字节数
+      "prettier.useTabs": false, // 缩进不使用tab，使用空格
+      "prettier.semi": true, // 句尾添加分号
+      "prettier.singleQuote": true, // 使用单引号代替双引号
+      "prettier.proseWrap": "preserve", // 默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
+      "prettier.arrowParens": "avoid", //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
+      "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
+      "prettier.disableLanguages": ["vue"], // 不格式化vue文件，vue文件的格式化单独设置
+      "prettier.endOfLine": "auto", // 结尾是 \n \r \n\r auto
+      "prettier.htmlWhitespaceSensitivity": "ignore",
+      "prettier.ignorePath": ".prettierignore", // 不使用prettier格式化的文件填写在项目的.prettierignore文件中
+      "prettier.jsxBracketSameLine": false, // 在jsx中把'>' 是否单独放一行
+      "prettier.jsxSingleQuote": false, // 在jsx中使用单引号代替双引号
+      "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
+      "prettier.trailingComma": "es5", // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
+      // "prettier.tslintIntegration": false, // 不让prettier使用tslint的代码格式进行校验
+      // "prettier.eslintIntegration": false, //不让prettier使用eslint的代码格式进行校验
+      // "prettier.stylelintIntegration": false, //不让prettier使用stylelint的代码格式进行校验
+      // "prettier.parser": "babylon", // 格式化的解析器，默认是babylon
+    
+      /* Vetur配置 */
+      "vetur.format.defaultFormatter.html": "prettier",
+      "vetur.format.defaultFormatter.js": "prettier",
+      "vetur.format.defaultFormatter.less": "prettier",
+      "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+          "printWidth": 160,
+          "singleQuote": true, // 使用单引号
+          "semi": true, // 末尾使用分号
+          "tabWidth": 4,
+          "arrowParens": "avoid",
+          "bracketSpacing": true,
+          "proseWrap": "preserve" // 代码超出是否要换行 preserve保留
+        }
+      },
+    
+      /* 编辑器配置 */
+      "editor.tabSize": 2, // tab缩进空格数
+      "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+      "javascript.updateImportsOnFileMove.enabled": "always",
+      "workbench.editor.enablePreview": false,
+      "diffEditor.ignoreTrimWhitespace": false, // 打开文件时在新标签打开
+      "explorer.compactFolders": false, // 空文件夹自动折叠
+      "problems.showCurrentInStatus": true, // 在状态栏显示错误信息
+    }
+    
+    
+    
+    ```
+    代码格式化配置参考文档
+    https://juejin.im/post/5cc58039f265da03775c5a6f
+    ```
+```
+
+## 编辑器代码格式化 搭配扩展
+
+![image](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/raw/master/formatEX.jpg)
+
+## 代码片段
+
+### vscode 代码快捷生成 代码片段
+
+##### NUXT VUEX
 
 ```
 "print to console":{
@@ -286,7 +291,7 @@ $ git merge 命令找回
 }
 ```
 
-#### VUE
+##### VUE
 ```
 "Print to console": {
     "prefix": "vue",
@@ -333,7 +338,7 @@ $ git merge 命令找回
 }
 ```
 
-#### VUE Nuxt
+##### VUE Nuxt
 ```
 "Print to console": {
 	"prefix": "vue nuxt",
