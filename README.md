@@ -85,7 +85,13 @@
 
 [~~JS 标准参考~~ ](https://javascript.ruanyifeng.com/) 停止维护可访问
 
+# 相关文档推荐
+
+[转行自学前端笔记](https://juejin.im/user/5e7721de51882549564b7caa/posts) &nbsp;&nbsp;  记录内容相当详细 笔者笔记创作 ing... 
+
 # GIT 操作
+
+[git 命令大全](https://code.jingshonline.net/zhengyan/front-end-documents-and-tools/blob/master/git.md)
 
 ``` bash
 
