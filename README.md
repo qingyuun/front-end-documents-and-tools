@@ -87,7 +87,7 @@
 
 # 相关文档推荐
 
-[转行自学前端笔记](https://juejin.im/user/5e7721de51882549564b7caa/posts) &nbsp;&nbsp;  记录内容相当详细 笔者笔记创作 ing... 
+[转行自学前端笔记](https://juejin.im/user/5e7721de51882549564b7caa/posts) &nbsp;&nbsp;  记录内容相当详细，知识点整理适合回炉重造 笔者笔记创作 ing... 
 
 # GIT 操作
 
