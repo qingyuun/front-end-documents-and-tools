@@ -180,6 +180,10 @@ $ git merge 命令找回
 
 # VSCode 
 
+## 推荐插件
+
+[any-rule](https://any86.github.io/any-rule/)  包含各种常用正则表达式  [仓库地址](https://github.com/any86/any-rule/)
+
 
 ## 编辑器代码格式化
 
