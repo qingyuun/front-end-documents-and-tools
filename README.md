@@ -1,3 +1,13 @@
+# JingShOnline 项目提交 及  issues  
+
+### 所修改内容在提交时存在相关 issues 请携带相关 issues 信息  eg: `修改案件bug #83`
+### 相关 issues 在修改完成后不要直接进行关闭操作,可在 issues 加上 `done` 标签
+### 相关 issues 中如果存在多个修改项时,如果存在勾选操作 在完成对应修改内容时 将相关选项画 `√` eg:
+
+- [ ] 修改1
+- [x] 修改2
+- [ ] 修改3
+
 # 常用软件
 
 [Adobe 2020 全家桶： 可修改安装位置、安装后登录账号即可使用 地址：百度网盘  提取码：8php](https://pan.baidu.com/s/17BDZnKYxG_NKsnyneSs1lg)
