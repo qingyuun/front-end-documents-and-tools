@@ -99,6 +99,13 @@
 * 同一个数据需要使用不同格式在方法名后添加  getFunctionForxxx()  `eg:   getCourtData()    getCourtForAntd()`
 
 
+## 禁止出现以下错误
+
+
+
+
+
+
 # 基本规范
 
 ### 命名分类
