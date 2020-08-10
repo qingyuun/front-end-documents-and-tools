@@ -1,3 +1,13 @@
+# JingShOnline 项目提交 及  issues  
+
+### 所修改内容在提交时存在相关 issues 请携带相关 issues 信息  eg: `修改案件bug #83`
+### 相关 issues 在修改完成后不要直接进行关闭操作,可在 issues 加上 `done` 标签
+### 相关 issues 中如果存在多个修改项时,如果存在勾选操作 在完成对应修改内容时 将相关选项画 `√` eg:
+
+- [ ] 修改1
+- [x] 修改2
+- [ ] 修改3
+
 # 常用软件
 
 [Adobe 2020 全家桶： 可修改安装位置、安装后登录账号即可使用 地址：百度网盘  提取码：8php](https://pan.baidu.com/s/17BDZnKYxG_NKsnyneSs1lg)
@@ -87,7 +97,7 @@
 
 # 相关文档推荐
 
-[转行自学前端笔记](https://juejin.im/user/5e7721de51882549564b7caa/posts) &nbsp;&nbsp;  记录内容相当详细 笔者笔记创作 ing... 
+[转行自学前端笔记](https://juejin.im/user/5e7721de51882549564b7caa/posts) &nbsp;&nbsp;  记录内容相当详细，知识点整理适合回炉重造 笔者笔记创作 ing... 
 
 # GIT 操作
 
@@ -179,6 +189,10 @@ $ git merge 命令找回
 
 
 # VSCode 
+
+## 推荐插件
+
+[any-rule](https://any86.github.io/any-rule/)  包含各种常用正则表达式  [仓库地址](https://github.com/any86/any-rule/)
 
 
 ## 编辑器代码格式化
